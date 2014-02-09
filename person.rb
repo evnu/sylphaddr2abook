@@ -3,16 +3,23 @@
 #
 
 class Person
-    attr_accessor :first_name, :last_name, :nick_name, :cn
+    attr_accessor :first_name, :last_name, :nick_name, :custom1
     attr_accessor :addresses
 
     def initialize()
         @addresses = []
+        @custom = ""
     end
 
     def to_s
         addrs_str = addresses.map(&:to_s).join(',')
-        "#{last_name},#{first_name},#{nick_name},cn=#{cn},#{addrs_str}"
+        full_name = "#{first_name} #{last_name}"
+        [
+            "name=#{full_name}",
+            "nick=#{nick_name}",
+            "email=#{addrs_str}",
+            "custom1=#{custom1}"
+        ].join("\n")
     end
 end
 
