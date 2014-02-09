@@ -20,7 +20,7 @@ module Opts
             end
 
             opts.on("-i", "--initial_index INDEX", "Initial address output index") do |i|
-                options.initial_index = i
+                options.initial_index = i.to_i
             end
 
             opts.on_tail("-h", "--help", "Show this message") do
