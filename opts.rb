@@ -13,9 +13,9 @@ module Opts
 
         # build parser
         opt_parser = OptionParser.new do |opts|
-            opts.banner = "sylphaddr2csv.rb: convert sylpheed address-book to csv"
+            opts.banner = "sylphaddr2csv.rb: convert sylpheed address books to csv"
 
-            opts.on("-a","--address-book book1,book2,..", Array, "Address-books") do |list|
+            opts.on("-a","--address_books book1,book2,..", Array, "Address books") do |list|
                 options.addressbooks = list
             end
 
